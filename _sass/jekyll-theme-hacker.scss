@@ -271,3 +271,42 @@ a {
 #a-title {
   text-decoration: none;
 }
+
+.post {
+	padding-top: 10px;
+	display: flex;
+}
+
+.entrythumb {
+	flex: 1;
+	padding-right: 20px;
+}
+
+.entry {
+    flex: 3;
+    width: 100%;
+    height: 200px;
+    background: $cod-grey1; //linear-gradient(to top, #3acfd5 0%, #3a4ed5 100%);
+    border-radius: 1%;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+
+&::before {
+    border-radius: 1%;
+    content: '';
+    background-image: linear-gradient(to right bottom, $cod-grey2 60%, $cod-grey3 100%);
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    position: absolute;
+    z-index:-1;
+    transform: translate3d(0px, 0px, 0) scale(1.02) rotate(0.0deg);
+ }
+
+}
+
+.entryexcerpt {
+	padding-left: 20px;
+}
