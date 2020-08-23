@@ -35,9 +35,30 @@
 
     <div class="container">
       <section id="main_content">
-        <p>Every time you power cycle your PC or your MIDI devices, udev gives your MIDI devices new names. This can be annoying with some software. Here’s how to fix that.</p>
+        <small>23 August 2020</small>
+<h1>Permanent MIDI Names In ALSA</h1>
+
+<p>Every time you power cycle your PC or your MIDI devices, udev gives your MIDI devices new names. This can be annoying with some software. Here’s how to fix that.</p>
 
 <!--more-->
+
+<p><a data-fancybox="rename" href="/images/20200823-01.png" data-caption="Power cycling will change these..." title="Power cycling will change these..."><img src="/images/small/20200823-01.png" /></a>
+<a data-fancybox="rename" href="/images/20200823-02.png" data-caption="...to another set of names" title="...to another set of names"><img src="/images/small/20200823-02.png" /></a></p>
+
+<p>Some software (e.g. Reaper) relies on the actual names given to the devices by udev/ALSA. Other software (e.g. Ardour, Bitwig) are more resilient, and instead rely on the actual USB device identifiers, which don’t change. If you’re using software of the former category, then you’ll need to edit a configuration file to force bind the devices to specific names.</p>
+
+<p><a href="https://help.ubuntu.com/community/UbuntuStudio/UsbAudioDevices">Official documentation for doing this</a> - long document, but not too bad to configure a small number of devices this way</p>
+
+
+
+
+  <small>tags: <em>workaround, MIDI</em></small>
+
+
+<div class="navback">
+<a href="/linuxstudio">&#9754;&#9754; Back</a>
+</div>
+
 
       </section>
     </div>
