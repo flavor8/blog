@@ -38,17 +38,16 @@
         <small>23 August 2020</small>
 <h1>Multiple MIDI Devices To (Ideally) One Track (in Bitwig, Ardour, Reaper)</h1>
 
-<p>In this post I compare the three principle DAWs available to Linux with respect to one specific MIDI related workflow: I want multiple MIDI inputs on one track, and ideally to use the same track for audio. <!--more--></p>
+<p>In this post I compare the three principle DAWs available on Linux with respect to one specific MIDI related workflow: I want multiple MIDI inputs on one track, and ideally to use the same track for audio. <!--more--></p>
 
-<p>I have a Keystep (MIDI keyboard) plugged into the studio laptop via USB, and a Minilog (synth) connected via a MIDI controller, but located on the other side of the studio from my desk. I want work out a tune on the Keystep (which is at the desk), record it as MIDI, then while the tune loops record MIDI CC (e.g. changing the cutoff on the filter) from the Minilog. Because I use a control surface, I want to minimize the number of tracks (because each track takes up one slot on the control surface). Here’s what that looks like in each of the three DAWs.</p>
+<p>I have a Keystep (MIDI keyboard) plugged into the studio laptop via USB, and a Minilog (synth) connected via a MIDI controller, but located on the other side of the studio from my desk. I want to work out a tune on the Keystep (which is at the desk), record it as MIDI, and then while the tune loops in the DAW record (and overdub) MIDI CC (e.g. changing the cutoff on the filter) from the Minilog. Because I use a control surface, I want to minimize the number of tracks (because each track takes up one slot on the control surface). Here’s what that looks like in each of the three DAWs.</p>
 
 <p>The following is the current best of my knowledge on this subject; I’ll update and/or replace this post if I learn anything substantially different.</p>
 
 <h1 id="bitwig">Bitwig</h1>
 
 <p><a class="fancy" data-fancybox="bitwig" href="/images/20200823-09.png" data-caption="The Minilog set up as an instrument - note 'All Ins' as the input" title="The Minilog set up as an instrument - note 'All Ins' as the input"><img src="/images/small/20200823-09.png" /></a>
-<a class="fancy" data-fancybox="bitwig" href="/images/20200823-10.png" data-caption="Choosing the input" title="Choosing the input"><img src="/images/small/20200823-10.png" /></a>
-<a class="fancy" data-fancybox="bitwig" href="/images/20200823-11.png" data-caption="Track view" title="Track view"><img src="/images/small/20200823-11.png" /></a></p>
+<a class="fancy" data-fancybox="bitwig" href="/images/20200823-10.png" data-caption="Choosing the input" title="Choosing the input"><img src="/images/small/20200823-10.png" /></a></p>
 
 <p>Bitwig has a unique innovation - the Hardware Instrument track. This is a single track which is configured to be both MIDI and Audio. Even more brilliant, you can automatically configure the latency – per track – by pressing a button to tell it to start measuring, and then playing keys on your MIDI keyboard. It will measure the time between sending the MIDI to the instrument, and receiving audio back, and then will automatically adjust the latency of the track to keep everything in sync.</p>
 
@@ -65,7 +64,7 @@
 
 <p>You can set up channel filters on the inputs - this allows you to set a Keystep up as an input for multiple tracks, and then switch between them by changing channel on the Keystep. Further, theoretically you could have different MIDI keyboards outputting the <em>same</em> channels to different tracks, given the routing capabilities, something that Bitwig can’t do.</p>
 
-<p>However, I haven’t put in the time with Ardour, as I have with Reaper, and it’s unfortunately not as immediately intuitive as Bitwig is. I had trouble with overdubbing while looping a recording - it wouldn’t play back the existing notes, and googling didn’t lead me to a solution. I also had issues with general workflow, but this is something that would likely come with time. If I could collapse the tracks into one on the control surface, I’d certainly give it the time to learn it.</p>
+<p>However, I haven’t put in the time with Ardour, as I have with Reaper, and it’s unfortunately not as immediately intuitive as Bitwig is. I had trouble with overdubbing while looping a recording - it wouldn’t play back the existing notes while recording, and googling didn’t lead me to a solution. I also had issues with general workflow, but this is something that would likely come with time. If I could collapse the tracks into one on the control surface, I’d certainly give it the time to learn it.</p>
 
 <h1 id="reaper">Reaper</h1>
 
@@ -77,9 +76,9 @@
 
 <p>Reaper ended up using the most tracks out of the three DAWs - one for audio, one for MIDI from the synth, and one for MIDI from the Keystep.</p>
 
-<p>Reaper tracks aren’t specifically MIDI or Audio; you assign an input by right (audio or MIDI) clicking on the record button after the track already exists. I grouped together MIDI tracks with their Audio tracks using Reaper’s folder feature, as you can see here; in the Mixer UI, you can right click and choose “Group tracks at left”, which at least means that the control surface has audio tracks clustered together. Unfortunately there’s a bug whereby it forgets that it’s setup to do this, periodically, and so the MIDI tracks end up appearing next to the audio ones on the control surface now and again. I can get around this by moving them out from subfolders, and to the end, which I may do…but having the MIDI track physically separated from the audio track isn’t ideal.</p>
+<p>Reaper tracks aren’t specifically MIDI or Audio; you assign an input by right clicking on the record button after the track already exists, and then choosing from (as usual for Reaper) one of many options. I grouped together MIDI tracks with their Audio tracks using Reaper’s folder feature, as you can see above. In the Mixer UI, you can right click and choose “Group tracks at left”, which at least means that the control surface has audio tracks clustered side by side together. Unfortunately there’s a bug whereby it forgets that it’s setup to do this, periodically, and so the MIDI tracks end up appearing next to the audio ones on the control surface now and again. I can get around this by moving them out from subfolders, and to the end, which I may do…but having the MIDI track physically separated from the audio track isn’t ideal.</p>
 
-<p>The annoying aspect of the Keystep track is that I have to send the Keystep output to a particular device; the MIDI controller has 16 devices, corresponding to different MIDI DINs, so you can only send the Keystep’s output to a single hardware synth at once, and furthermore it’s not possible to switch on the fly without menu diving.</p>
+<p>The annoying aspect of the separate Keystep track is that I have to send the Keystep output to a particular device; the MIDI controller has 16 devices, corresponding to different MIDI DINs, so you can only send the Keystep’s output to a single hardware synth at once, and furthermore it’s not possible to switch on the fly without menu diving. I could get around this by adding a Keystep track per pair of audio/MIDI synth tracks, binding to individual MIDI channels, and that would let me switch channels on the Keystep and send MIDI to individual synths through the DAW, providing that the tracks were armed. But, that’s a lot of tracks just to achieve this setup.</p>
 
 <p>Reaper has an amazing Routing Matrix view - you can see that they’re so close to being able to support the workflow if this <em>just</em> allowed multiple select, along the lines of Ardour.</p>
 
