@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; font-family: 'Alegreya', serif; co
 
 #main_content h2 { font-size: 2.1em; letter-spacing: 3px; }
 
-#main_content h3 { font-size: 18px; }
+#main_content h3 { font-size: 1.5em; letter-spacing: 2px; }
 
 #main_content h4 { font-size: 14px; }
 
@@ -143,6 +143,8 @@ a { color: #e1ef7e; text-shadow: 0 0 5px rgba(104, 182, 255, 0.5); text-decorati
 
 .reddit { padding-top: 30px; width: 100%; align: left; }
 
-.taglist { border: 1px solid white; padding: 10px; }
+.postdate { color: #027a9f; font-size: 0.8em; }
+
+.tag { font-size: 0.8em; border: 1px solid #027a9f; padding: 5px; border-radius: 10%; }
 
 /*# sourceMappingURL=style.css.map */
