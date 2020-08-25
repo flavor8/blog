@@ -68,7 +68,7 @@
 <p><a class="fancy" data-fancybox="bitwig" href="/images/20200823-09.png" data-caption="The Minilog set up as an instrument - note 'All Ins' as the input" title="The Minilog set up as an instrument - note 'All Ins' as the input"><img src="/images/small/20200823-09.png" /></a>
 <a class="fancy" data-fancybox="bitwig" href="/images/20200823-10.png" data-caption="Choosing the input" title="Choosing the input"><img src="/images/small/20200823-10.png" /></a></p>
 
-<p>Bitwig has a unique innovation - the Hardware Instrument track. This is a single track which is configured to be both MIDI and Audio. Even more brilliant, you can automatically configure the latency – per track – by pressing a button to tell it to start measuring, and then playing keys on your MIDI keyboard. It will measure the time between sending the MIDI to the instrument, and receiving audio back, and then will automatically adjust the latency of the track to keep everything in sync.</p>
+<p>Bitwig has a unique innovation - the Hardware Instrument track. This is a single track which is configured to be both MIDI out and Audio in (from the synth). Even more brilliant, you can automatically configure the latency – per track – by pressing a button to tell it to start measuring, and then playing keys on your MIDI keyboard. It will measure the time between sending the MIDI to the instrument, and receiving audio back, and then will automatically adjust the latency of the track to keep everything in sync. <em>However</em>, I have not found a way to record audio on the same track; you still need a separate track for the audio result. (There is a “bounce” feature which I haven’t yet managed to get good results from, and which may do the job - will update after more experimentation.)</p>
 
 <p>You can also set up the Keystep as a universal controller; change the channel on the Keystep and the track that’s configured to that MIDI channel will both record and send MIDI to the synth that it’s associated with (caveat that the track must be selected for this to work - fortunately you can select multiple tracks at once.)</p>
 
@@ -103,7 +103,7 @@
 
 <h1 id="current-conclusion">Current Conclusion</h1>
 
-<p>Bitwig is the clear leader in supporting this particular workflow, as things stand right now. Both Reaper and Ardour have unique capabilities, and both bring a ton of flexibility to the table, but Bitwig has a clear workflow design advantage.</p>
+<p>Both Ardour and Bitwig require two tracks for this configuration; one to handle MIDI I/O, and one to handle the audio recording. With this setup, I find myself preferring Bitwig over Ardour, as it’s simply less fiddly to set up, and its workflow was designed to accomodate setups like this. Reaper, my previous main DAW, is unfortunately now on the bench.</p>
 
 
 <div class="navback">
